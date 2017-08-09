@@ -15,7 +15,6 @@ body{
 .frontpage-text{
 	font-family: didot;
 	width: 100%;
-	height: 100%;
 	position: absolute;
 	z-index: 100;
 	color:white;
@@ -25,7 +24,7 @@ body{
 
 
 .video{
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	overflow:hidden;
 	position: relative;
@@ -34,7 +33,7 @@ body{
 }
 
 .smalltext {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .mediumtext {
@@ -65,5 +64,16 @@ a {
 .slash{
 	width:10px;
 	position:relative;
-	top:6px;
+	top:7px;
+}
+
+
+.content{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #aaaaaa;
+	z-index: 101; 
+	position: absolute;
+
 }
