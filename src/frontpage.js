@@ -8,15 +8,14 @@ function videoHeight() {
 }
 
 $(".frontpage-text").ready(function(){
-sizeCorrectly()
-videoHeight()
+	sizeCorrectly();
+	videoHeight();
 })
 
 $( window ).resize(function() {
-sizeCorrectly()
-videoHeight();
+	sizeCorrectly();
+	videoHeight();
 });
-
 
 
 $(".frontpage-text").css("top", window.innerHeight + "px")
@@ -44,8 +43,13 @@ function scrollLink(linkObj, scrollToObj){
 }
 
 $(document).ready(function(){
+	$("#ball").animate({left:"130px", top:"-65px", height:"12px", opacity:1}, 0, "easeInOutExpo")
+	puls = true;
+	pulse("#ballimg");
+
 	$(".floater").hover(function(){
 
+		//ball:
 		$("#ballimg").stop()
 		$("#ballimg").animate({opacity:1}, 500)
 		puls = false;
@@ -58,9 +62,16 @@ $(document).ready(function(){
 
 		//logo:
 		$("#slyt").stop()
-		console.log('test')
 		$("#slyt").animate({width: "120px", top:"-50px" }, 1000, "easeOutExpo");
+
 	}, function(){
+
+		//ball:		
+		$("#ball").stop()
+		$("#ball").animate({left:"130px", top:"-65px", height:"12px"}, 1000, "easeInOutExpo")
+		puls = true;
+		pulse("#ballimg");
+
 		//menu:
 		$(".menu").stop()
 		$(".menu").animate({opacity: 0, top:"-30px" }, 1000, "easeInOutExpo");
@@ -69,14 +80,9 @@ $(document).ready(function(){
 		$("#slyt").stop()
 		$("#slyt").animate({width: "230px", top:"0px" }, 1000, "easeInOutExpo");
 
-		$("#ball").stop()
-		$("#ball").animate({left:"130px", top:"-65px", height:"12px"}, 1000, "easeInOutExpo")
-
-		puls = true;
-		pulse("#ballimg");
 	})
 
-	$(".smalltext").hover(function(){
+	$(".menu-item").hover(function(){
 		var item = $(this).position().left + ($(this).width()/2) + 8 ;
 		$("#ball").stop()
 		$("#ball").animate({opacity:1, left: item-(window.innerWidth/2) + "px", top:"0px"}, 500, "easeOutExpo")
@@ -84,8 +90,6 @@ $(document).ready(function(){
 
 	scrollLink("#fullstacklink", "#fullstackcontent")
 })
-
-
 
 
 
