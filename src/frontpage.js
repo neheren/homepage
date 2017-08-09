@@ -1,6 +1,8 @@
+var menuHeight;
 function sizeCorrectly() {
 	var contentHeight = $(".floater").height();
-	$(".frontpage-text").css("top", window.innerHeight/2 - contentHeight/2 + "px")
+	menuHeight = window.innerHeight/2 - contentHeight/2;
+	$(".frontpage-text").css("top", menuHeight + "px")
 }
 
 function videoHeight() {
@@ -37,8 +39,11 @@ function pulse(obj){
 function scrollLink(linkObj, scrollToObj){
 	$(linkObj).click(function() {
 		$('html, body').animate({
-			scrollTop: $(scrollToObj).offset().top
-		}, 1000, "easeInOutExpo");
+			scrollTop: $(scrollToObj).position().top
+		}, 1000, "easeInOutExpo", function(){
+			scrollMenuDown();
+		});
+		
 	});
 }
 
@@ -66,30 +71,65 @@ $(document).ready(function(){
 
 	}, function(){
 
-		//ball:		
-		$("#ball").stop()
-		$("#ball").animate({left:"130px", top:"-65px", height:"12px"}, 1000, "easeInOutExpo")
-		puls = true;
-		pulse("#ballimg");
-
-		//menu:
-		$(".menu").stop()
-		$(".menu").animate({opacity: 0, top:"-30px" }, 1000, "easeInOutExpo");
 
 		//logo:
-		$("#slyt").stop()
-		$("#slyt").animate({width: "230px", top:"0px" }, 1000, "easeInOutExpo");
+		if(window.scrollY < menuHeight){
+			//ball:
+			$("#ball").stop()
+			$("#ball").animate({left:"130px", top:"-65px", height:"12px"}, 1000, "easeInOutExpo")
+			puls = false;
+
+			$("#slyt").stop()
+			$("#slyt").animate({width: "230px", top:"0px" }, 1000, "easeInOutExpo");
+		}else{
+			//ball:		
+			$("#ball").stop()
+			$("#ball").animate({opacity:1, left:"70", top:"-60px", height:"8px"}, 1200, "easeOutExpo")
+
+			puls = true;
+			pulse("#ballimg");
+
+			//menu:
+
+		}
+			$(".menu").stop()
+			$(".menu").animate({opacity: 0, top:"-30px" }, 1000, "easeInOutExpo");
 
 	})
 
 	$(".menu-item").hover(function(){
-		var item = $(this).position().left + ($(this).width()/2) + 8 ;
+		var item = $(this).position().left + ($(this).width()/2) - 2 ;
 		$("#ball").stop()
 		$("#ball").animate({opacity:1, left: item-(window.innerWidth/2) + "px", top:"0px"}, 500, "easeOutExpo")
 	})
 
-	scrollLink("#fullstacklink", "#fullstackcontent")
+	scrollLink("#fullstacklink", "#sodaCanvas")
+
+	$(window).scroll(function(){
+		if(window.scrollY > menuHeight){
+			$(".frontpage-text").css({top: window.scrollY})
+
+			$("#ball").stop()
+			$("#ball").animate({opacity:1, left:"70", top:"-60px", height:"8px"}, 1200, "easeOutExpo")
+			$("#slyt").stop()
+			$("#slyt").animate({width: "120px", top:"-50px" }, 1000, "easeOutExpo");
+
+		}else{
+			$(".frontpage-text").css({top: menuHeight+ "px"})
+			$("#slyt").stop()
+			$("#slyt").animate({width: "230px", top:"0px" }, 1000, "easeInOutExpo");
+			$("#ball").stop()
+			$("#ball").animate({left:"130px", top:"-65px", height:"12px"}, 1000, "easeInOutExpo")
+		}
+	})
+	
 })
+
+
+
+function scrollMenuDown() {
+	
+}
 
 
 

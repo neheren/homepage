@@ -1,6 +1,16 @@
 @font-face {
 	font-family: didot;
-	src: url(/fonts/didot.tff);
+	src: url(fonts/didot.tff);
+}
+
+@font-face {
+	font-family: bebas-bold;
+	src: url(fonts/BebasNeueBold_1.otf);
+}
+
+@font-face {
+	font-family: bebas;
+	src: url(fonts/BebasNeueBook.otf);
 }
 
 ::-webkit-scrollbar { 
@@ -8,6 +18,7 @@
 }
 
 body{
+	background-color: #010101;
 	margin:0px;
 }
 
@@ -46,7 +57,8 @@ body{
 }
 
 .menu {
-	margin: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	opacity: 0;
 	top:-30px;
 	position: relative;
@@ -64,11 +76,26 @@ a {
 	top:7px;
 }
 
+.center{
+	width: 100%;
+	z-index: 100;
+	color:#808080;
+	text-align: center;
+}
 
-.content{
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #aaaaaa;
-	z-index: 101; 
+.babas-bold {
+	font-family: bebas-bold;
+}
+.bebas {
+	font-family: bebas;
+}
+
+
+.centerbox {
+    width: 800px;
+    height: 50vh;
+    margin: 25vh auto;
+	top: 100px;
+	text-align: center;
+    background: orange;
 }

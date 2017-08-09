@@ -4,11 +4,17 @@
 		<script src="jquery-3.2.1.min.js"> </script>
 		<script src="jquery-ui.min.js"> </script>
 		<script src="frontpage.js"> </script>
+		<script src="content.js"> </script>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		
-    </head>
+		<!--sodaCanvas by Nikolaj Schlüter -->
+		<script src = 'sodaCanvas.js/w3color.js'></script>
+		<script src = 'sodaCanvas.js/genericControllers.js'></script>
+		<script src = 'sodaCanvas.js/sodaCanvas.js'></script>
+		<!-- <script src = 'sodaCanvas.js/mySodaScript.js'></script> -->
+	
+	</head>
     <body class="">
-
+		<div style="position:fixed; z-index:102;color:white;margin:10px;font-size:15px;opacity:0.5" class='bebas'>© Nikolaj Schlüter</div>
         <div class="frontpage-text">
             <span class="floater">
 				<img src="photos/slyt.svg" id='slyt' width="233px">
@@ -33,38 +39,31 @@
 
         <div>
             <video autoplay loop class="video">
-                <source src="videos/portfoliovideo.mp4" type="video/mp4">
+                <source src="http://kirstineogsigurd.dk/portfoliovideo.mp4" type="video/mp4">
             </video>
 		</div>
 
-		<div class="content smalltext" id="fullstackcontent">
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
-			content<br>
+		<div>
+		<canvas id='sodaCanvas' width='1920' > </canvas>
+
+			<div class="centerbox">
+				<div class="center mediumtext babas-bold" style="color:azure;margin-top:30px">
+					
+				</div>
+				<div class='rubrik smalltext didot'>
+					this is text ??? this is text ??? this is text ???  
+				</div>
+
+			</div>
+			<div class="centerbox">
+				<div class="center mediumtext babas-bold" style="color:azure;margin-top:30px">
+					
+				</div>
+				<div class='rubrik smalltext didot'>
+					this is text ??? this is text ??? this is text ???  
+				</div>
+
+			</div>
 		</div>
     </body>
 </html>
