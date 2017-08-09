@@ -20,20 +20,50 @@ body{
 	z-index: 100;
 	color:white;
 	text-align: center;
-	font-size: 50px;
 }
 
 
-
-.contentdiv{
-
-}
 
 .video{
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 	overflow:hidden;
 	position: relative;
 	object-fit: cover;
 
+}
+
+.smalltext {
+	font-size: 20px;
+}
+
+.mediumtext {
+	font-size: 40px;
+}
+
+.largetext {	
+	font-size: 50px;
+}
+
+.didot {
+	font-family: didot;
+}
+
+.menu {
+	margin: 10px;
+	opacity: 0;
+	top:-30px;
+	position: relative;
+
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.slash{
+	width:10px;
+	position:relative;
+	top:6px;
 }
