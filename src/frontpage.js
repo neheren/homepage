@@ -3,6 +3,8 @@ function sizeCorrectly() {
 	var contentHeight = $(".floater").height();
 	menuHeight = window.innerHeight/2 - contentHeight/2;
 	$(".frontpage-text").css("top", menuHeight + "px")
+	$("body").css("width", window.innerWidth)
+	$(".frontpage-text").css("width", window.innerWidth)
 }
 
 function videoHeight() {
