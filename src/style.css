@@ -18,7 +18,7 @@
 }
 
 body{
-	background-color: #010101;
+	background-color: #1d1f23;
 	margin:0px;
 }
 
@@ -86,6 +86,7 @@ a {
 .babas-bold {
 	font-family: bebas-bold;
 }
+
 .bebas {
 	font-family: bebas;
 }
@@ -94,8 +95,29 @@ a {
 .centerbox {
     width: 800px;
     height: 50vh;
-    margin: 25vh auto;
+    margin: 0 auto;
 	top: 100px;
 	text-align: center;
-    background: orange;
+    background: rgba(0, 0, 0, 0.14);
+}
+
+.wrapper{
+	font-size: 30px;
+	font-family: bebas;
+	font-style: bold;
+	padding:100px;
+}
+
+th, td {
+	font-family: didot;
+	font-size: 40px;
+	color:white;
+    padding: 15px;
+}
+
+
+.rubrik{
+	font-size: 15px;
+	text-align: justify;
+	line-height: 20px
 }

@@ -38,14 +38,23 @@ function pulse(obj){
 
 function scrollLink(linkObj, scrollToObj){
 	$(linkObj).click(function() {
+		hideMenu()
 		$('html, body').animate({
 			scrollTop: $(scrollToObj).position().top
-		}, 1000, "easeInOutExpo", function(){
-			scrollMenuDown();
-		});
-		
+		}, 1000, "easeInOutExpo");
 	});
 }
+
+
+function hideMenu(){
+	$("#ball").stop()
+	$("#ball").animate({opacity:1, left:"70", top:"-60px", height:"8px"}, 300, "easeOutExpo")
+	$(".menu").stop()
+	$(".menu").animate({opacity: 0, top:"-30px" }, 1000, "easeInOutExpo");
+}
+
+
+
 
 $(document).ready(function(){
 	$("#ball").animate({left:"130px", top:"-65px", height:"12px", opacity:1}, 0, "easeInOutExpo")
@@ -97,13 +106,16 @@ $(document).ready(function(){
 
 	})
 
+
+
+
 	$(".menu-item").hover(function(){
 		var item = $(this).position().left + ($(this).width()/2) - 2 ;
 		$("#ball").stop()
 		$("#ball").animate({opacity:1, left: item-(window.innerWidth/2) + "px", top:"0px"}, 500, "easeOutExpo")
 	})
 
-	scrollLink("#fullstacklink", "#sodaCanvas")
+	scrollLink("#fullstacklink", ".centerbox")
 
 	$(window).scroll(function(){
 		if(window.scrollY > menuHeight){
@@ -124,13 +136,6 @@ $(document).ready(function(){
 	})
 	
 })
-
-
-
-function scrollMenuDown() {
-	
-}
-
 
 
 
