@@ -1,4 +1,4 @@
-var mySVG
+var mySVG;
 
 $(document).ready(function(){
     sizeCorrectly2();
