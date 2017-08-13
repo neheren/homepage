@@ -13,6 +13,11 @@
 	src: url(fonts/BebasNeueBook.otf);
 }
 
+@font-face {
+	font-family: bebas-mid;
+	src: url(fonts/BebasNeueRegular_0.otf);
+}
+
 ::-webkit-scrollbar { 
 	display: none; 
 }
@@ -93,11 +98,12 @@ a {
 
 
 .centerbox {
+	padding-left: 2px;
+	padding-top: 2px;
     width: 800px;
     height: 50vh;
     margin: 0 auto;
 	top: 100px;
-	text-align: center;
     background: rgba(0, 0, 0, 0.14);
 }
 
@@ -120,4 +126,54 @@ th, td {
 	font-size: 15px;
 	text-align: justify;
 	line-height: 20px
+}
+
+.thumbnail{
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	width: 20%;
+	margin: -2px;
+}
+
+.thumbimg{
+	width: 100%;
+	height: auto;
+}
+
+.thumbtext{
+	width: 100%;
+	font-family: bebas-mid;	
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:100%;
+  height: auto;
+  opacity: 0;
+  transition: .4s ease-out;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.thumbnail:hover .overlay {
+  opacity: 1;
+}
+
+
+.thumbnail:hover .thumbimg {
+  filter: blur(5px);
+  display: inline;
 }
