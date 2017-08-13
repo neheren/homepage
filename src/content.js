@@ -7,6 +7,24 @@ $(document).ready(function(){
         duration: 1000,
         easing: 'easeInOutExpo'
     });
+
+    $(".thumbnail").click(function(){
+        $(".exit").animate({opacity:1}, 1000, "easeOutExpo")
+        var link = "iframe/" + $(this).attr("article")
+        $("#iframe-content").remove()
+        $(".portfolio-content").animate({height:180*3+4 +"px", opacity:1}, 1000, "easeOutExpo", function() {
+            $(".portfolio-content").append('<iframe id="iframe-content" width="100%" height="100%" src="'+link+'" frameborder="0" allowfullscreen></iframe>')
+            $("#iframe-content").append('<div id="loader" style="color:white">loading</div>')
+        })
+    })
+
+    $(".exit").click(function(){
+        $(".exit").animate({opacity:0}, 1000, "easeOutExpo")
+        $(".portfolio-content").animate({height:0 +"px", opacity:0}, 1000, "easeOutExpo", function() {
+            $("#iframe-content").remove()
+        })
+    })
+
 })
 
 
@@ -17,7 +35,7 @@ $( window ).resize(function() {
 function sizeCorrectly2() {
     $(".content").css("height", window.innerHeight)
     $("#sodaCanvas").css("height", window.innerHeight)
-    height = 500;
+    height = 540;
     $(".centerbox").css({height: height, "margin-top": (window.innerHeight-height)/2, "margin-bottom": (window.innerHeight-height)/2})
     document.getElementById('sodaCanvas').setAttribute('width', window.innerWidth);
     document.getElementById('sodaCanvas').setAttribute('height', window.innerHeight);

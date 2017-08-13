@@ -1,0 +1,52 @@
+@font-face {
+	font-family: bebas;
+	src: url(fonts/BebasNeueBook.otf);
+}
+
+@font-face {
+	font-family: bebas-mid;
+	src: url(fonts/BebasNeueBold_1.otf);
+}
+@font-face {
+	font-family: rob;
+	src: url(fonts/Roboto-Medium.ttf);
+}
+
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+    transition: .4s ease-out;
+   // background: black;
+}
+
+.right-text{
+    margin-left:520px;
+}
+
+
+.header{
+    color:white;
+    font-size: 35px;
+    font-family: bebas-mid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+
+.text{
+    color:white;
+    font-size: 13px;
+    font-family:rob;
+}
+
+.description{
+    font-size: 14px;
+}
+
+.date{
+    font-style: italic;
+    font-weight: bold;
+}
