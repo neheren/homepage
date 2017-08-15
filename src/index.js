@@ -17,7 +17,7 @@ const articles = [
     article(5, 'Noget andet', 'https://www.youtube.com/embed/6B-Zgmvg-zzctI', 'ep', 'I denne smag bruger vi sag.', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
     article(6, 'Lækkert', 'https://www.youtube.com/embed/1N25RG_TuOI', 'crowd', 'I denne smag bruger vi sag.', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
     article(7, 'Svært projekt', 'https://www.youtube.com/embed/6B-zRNrCrA8', 'flyy', 'Tjek det ud', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
-]
+];
 
 
 
@@ -35,4 +35,4 @@ app.use("/", express.static(__dirname + '/'));
 app.use(express.static('public'))
 app.use(express.static('files'))
 
-app.listen(3002);
+app.listen(3000);
