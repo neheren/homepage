@@ -59,7 +59,7 @@ $(document).ready(function(){
 		//ball:
 		$("#ballimg").stop().animate({opacity:1}, 500)
 		puls = false;
-		$("#ball").stop().animate({opacity:1, left:"70", top:"-60px", height:"8px"}, 1200, "easeOutExpo")
+		$("#ball").stop().animate({opacity:1, left:"70px", top:"-60px", height:"8px"}, 1200, "easeOutExpo")
 		//menu:
 		$(".menu").stop().animate({opacity: 1, top:"0px" }, 1000, "easeOutExpo");
 		//logo:
@@ -86,7 +86,9 @@ $(document).ready(function(){
 		$("#ball").stop().animate({opacity:1, left: item-(window.innerWidth/2) + "px", top:"0px"}, 500, "easeOutExpo")
 	})
 
-	scrollLink("#fullstacklink", ".centerbox")
+	scrollLink("#projekterlink", "#projekter")
+	scrollLink("#erfaringlink", "#erfaring")
+	scrollLink("#musiklink", "#musik")
 
 	$(window).scroll(function(){
 		if(window.scrollY > menuHeight){

@@ -9,7 +9,7 @@ function article(id, title, video, image, text, desc, date){
 
 
 const articles = [
-    article(0, 'Simply Sketch', 'https://www.youtube.com/embed/6B-zRNrCrA8', 'flyy', 'I denne smag bruger vi sag.', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
+    article(0, 'Mix And Match', 'https://www.youtube.com/embed/O3w1uUlgplE', 'mixand', 'En Roskilde installation med formål at bringe folk sammen over "up and comming" musik. Videoen er animeret og produceret af mig. ', 'Lavet på Medialogy 3. semester', '13/8-2016'), 
     article(1, 'Noget andet', 'https://www.youtube.com/embed/6B-Zgmvg-zzctI', 'ep', 'I denne smag bruger vi sag.', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
     article(2, 'Lækkert', 'https://www.youtube.com/embed/1N25RG_TuOI', 'crowd', 'I denne smag bruger vi sag.', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
     article(3, 'Svært projekt', 'https://www.youtube.com/embed/6B-zRNrCrA8', 'flyy', 'Tjek det ud', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 

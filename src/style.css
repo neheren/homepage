@@ -42,7 +42,7 @@ body{
 	font-family: rob;
 	width: 100%;
 	position: absolute;
-	z-index: 100;
+	z-index: 200;
 	color:white;
 	text-align: center;
 }
@@ -114,6 +114,15 @@ a {
 	width: 900px;
 	margin: 0 auto;
 	top: 100px;
+	//background: rgba(0, 0, 0, 0.14);
+	z-index: 50;
+}
+
+.centerbox2 {
+	padding-left: 0px;
+	//padding-top: 4px;
+	width: 900px;
+	margin: 0 auto;
 	background: rgba(0, 0, 0, 0.14);
 	z-index: 50;
 }
@@ -146,6 +155,7 @@ th, td {
 	width: 20%;
 	height: 33%;
 	margin-top: -4px;
+	opacity: 0;
 }
 
 .thumbimg{
@@ -193,7 +203,7 @@ th, td {
 	margin:0px;
 	opacity: 0;
 	position:absolute;
-	background:rgba(0, 0, 0, 0.90);
+	background:rgba(0, 0, 0, 0.95);
 	width:900px;
 	height:0px;
 	z-index:100;
@@ -237,4 +247,29 @@ th, td {
 	margin-left:865px;
 	margin-top:10px;
 	font-family: rob-b
+}
+
+.animatingIcon {
+	width: 0px;
+	position: absolute;
+	margin-top:-40px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	
+}
+path{
+	fill: #FFFFFF;
+}
+
+#ghLogo{
+	width: 33px;
+	height:33px;
+	position: absolute;
+	margin-top:30px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 }

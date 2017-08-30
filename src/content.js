@@ -9,6 +9,7 @@ $(document).ready(function(){
     });
 
     $(".thumbnail").click(function(){
+        console.log(this)
         $(".exit").animate({opacity:1}, 1000, "easeOutExpo")
         var link = "iframe/" + $(this).attr("article")
         $("#iframe-content").remove()
@@ -25,6 +26,20 @@ $(document).ready(function(){
         })
     })
 
+    var svgIndex = 0;
+    setInterval(()=> {
+        var svgs = $(".animatingIcon");
+        var l = svgs.length;
+        var current = $(".animatingIcon")[svgIndex];
+        $(current).animate({width: "100px", opacity: 1}, 1000, "easeOutExpo", function(){
+            $(current).animate({width: "0px", opacity: 0}, 500, "easeInOutExpo")
+        })
+        svgIndex++;
+        
+        if(svgIndex >= l){
+            svgIndex = 0;
+        }
+    },1500)
 })
 
 
@@ -37,45 +52,51 @@ function sizeCorrectly2() {
     $("#sodaCanvas").css("height", window.innerHeight)
     height = 540;
     $(".centerbox").css({height: height, "margin-top": (window.innerHeight-height)/2, "margin-bottom": (window.innerHeight-height)/2})
-    document.getElementById('sodaCanvas').setAttribute('width', window.innerWidth);
-    document.getElementById('sodaCanvas').setAttribute('height', window.innerHeight);
 }
 
 var rolled = false;
 $(window).scroll(function(){
     if(!rolled) {
-        if(window.scrollY > $(".centerbox").position().top - 200) {
+        if(window.scrollY > $("#projekter").position().top - 200) {
+            console.log("!")
             $(document).ready(function(){
-            mySVG.drawsvg('animate');
-            rolled = true;
+                animateMenu()
+                rolled = true;
             });
         }
     }
 })
 
+function animateMenu(){
+    var menuIndex = 0;
+    setInterval(()=>{
+        $($(".thumbnail")[menuIndex]).animate({opacity:1}, 2000, "easeInOutExpo")
+        menuIndex ++;
+    },200)
+}
 
 
 
-$("#sodaCanvas").ready(function(){
+// $("#sodaCanvas").ready(function(){
 
-    c = document.getElementById("sodaCanvas");
-	frameRate = 60;
-	ctx = c.getContext("2d");
-	offset = {};
-	offset.y = c.offsetTop;
-    offset.x = c.offsetLeft;
-    console.log(offset)
+//     c = document.getElementById("sodaCanvas");
+// 	frameRate = 60;
+// 	ctx = c.getContext("2d");
+// 	offset = {};
+// 	offset.y = c.offsetTop;
+//     offset.x = c.offsetLeft;
+//     console.log(offset)
     
-    var middleRect = new rect(window.innerWidth/2 - 250, window.innerHeight/2 - 250, 500, 500, 'white');
+//     var middleRect = new rect(window.innerWidth/2 - 250, window.innerHeight/2 - 250, 500, 500, 'white');
     
-    sodaRect = new rect(100,100,100,100, "red") 
-	sodaRect.clicked(() => sodaRect.animate({width:0, height:0}, easing.easeOutExpo, 1000));
-    sodaRect.mouseOver(() => console.log('mouseOver'))
+//     sodaRect = new rect(100,100,100,100, "red") 
+// 	sodaRect.clicked(() => sodaRect.animate({width:0, height:0}, easing.easeOutExpo, 1000));
+//     sodaRect.mouseOver(() => console.log('mouseOver'))
     
 
-    middleRect.clicked(() => middleRect.animate({width:0, height:0}, easing.easeOutExpo, 1000));
+//     middleRect.clicked(() => middleRect.animate({width:0, height:0}, easing.easeOutExpo, 1000));
 
-    sodaLoop(middleRect.draw)
-})
+//     sodaLoop(middleRect.draw)
+// })
 
 
