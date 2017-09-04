@@ -1,6 +1,8 @@
 var mySVG;
+var contentOpen = false;
 
 $(document).ready(function(){
+    $("video").get(0).play()
     sizeCorrectly2();
 
     mySVG = $("svg").drawsvg({
@@ -10,19 +12,24 @@ $(document).ready(function(){
 
     $(".thumbnail").click(function(){
         console.log(this)
+        var article = $(this).attr("article");
         $(".exit").animate({opacity:1}, 1000, "easeOutExpo")
-        var link = "iframe/" + $(this).attr("article")
+        var link = "/iframe/" + article
         $("#iframe-content").remove()
         $(".portfolio-content").animate({height:180*3+4 +"px", opacity:1}, 1000, "easeOutExpo", function() {
             $(".portfolio-content").append('<iframe id="iframe-content" width="100%" height="100%" src="'+link+'" frameborder="0" allowfullscreen></iframe>')
             $("#iframe-content").append('<div id="loader" style="color:white">loading</div>')
+            switchPage('/projects/'+ article, article);
+            contentOpen = true;        
         })
     })
 
     $(".exit").click(function(){
+        switchPage('/', 'home');
         $(".exit").animate({opacity:0}, 1000, "easeOutExpo")
         $(".portfolio-content").animate({height:0 +"px", opacity:0}, 1000, "easeOutExpo", function() {
             $("#iframe-content").remove()
+            contentOpen = false;
         })
     })
 
@@ -40,7 +47,16 @@ $(document).ready(function(){
             svgIndex = 0;
         }
     },1500)
+
+    $("body").click(closeContent);
 })
+
+function closeContent(){
+    console.log(contentOpen)
+    if(contentOpen){
+        $('.exit').click();
+    }
+}
 
 
 $( window ).resize(function() {
@@ -56,16 +72,19 @@ function sizeCorrectly2() {
 
 var rolled = false;
 $(window).scroll(function(){
-    if(!rolled) {
-        if(window.scrollY > $("#projekter").position().top - 200) {
+    if(window.scrollY > $("#projekter").position().top - 200) {
+        if(!rolled) {
             console.log("!")
             $(document).ready(function(){
                 animateMenu()
-                rolled = true;
+                rolled = true;  
             });
         }
+    }else{
+        closeContent();
     }
 })
+
 
 function animateMenu(){
     var menuIndex = 0;
@@ -75,28 +94,23 @@ function animateMenu(){
     },200)
 }
 
+function switchPage(url, page) {
+    window.history.pushState(page, 'Title', url);
+}
 
+window.onpopstate = function(event) {
+    console.log(event.state);
+};
 
-// $("#sodaCanvas").ready(function(){
+function scrollNow(scrollToObj){
+	hideMenu()
+	$('html, body').animate({
+		scrollTop: $(scrollToObj).position().top
+	}, 1000, "easeInOutExpo");
+}
 
-//     c = document.getElementById("sodaCanvas");
-// 	frameRate = 60;
-// 	ctx = c.getContext("2d");
-// 	offset = {};
-// 	offset.y = c.offsetTop;
-//     offset.x = c.offsetLeft;
-//     console.log(offset)
-    
-//     var middleRect = new rect(window.innerWidth/2 - 250, window.innerHeight/2 - 250, 500, 500, 'white');
-    
-//     sodaRect = new rect(100,100,100,100, "red") 
-// 	sodaRect.clicked(() => sodaRect.animate({width:0, height:0}, easing.easeOutExpo, 1000));
-//     sodaRect.mouseOver(() => console.log('mouseOver'))
-    
-
-//     middleRect.clicked(() => middleRect.animate({width:0, height:0}, easing.easeOutExpo, 1000));
-
-//     sodaLoop(middleRect.draw)
-// })
-
-
+function openPortfolio(id){
+    console.log('id:')
+    console.log(id)
+	$($('.thumbnail')[id]).click()
+}

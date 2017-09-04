@@ -1,32 +1,32 @@
 @font-face {
 	font-family: didot;
-	src: url(fonts/didot.ttf);
+	src: url(/fonts/didot.ttf);
 }
 
 @font-face {
 	font-family: bebas-bold;
-	src: url(fonts/BebasNeueBold_1.otf);
+	src: url(/fonts/BebasNeueBold_1.otf);
 }
 
 @font-face {
 	font-family: bebas;
-	src: url(fonts/BebasNeueBook.otf);
+	src: url(/fonts/BebasNeueBook.otf);
 }
 
 @font-face {
 	font-family: bebas-mid;
-	src: url(fonts/BebasNeueRegular_0.otf);
+	src: url(/fonts/BebasNeueRegular_0.otf);
 }
 
 @font-face {
 	font-family: rob;
-	src: url(fonts/Roboto-Light.ttf);
+	src: url(/fonts/Roboto-Light.ttf);
 }
 
 
 @font-face {
 	font-family: rob-b;
-	src: url(fonts/Roboto-Bold.ttf);
+	src: url(/fonts/Roboto-Bold.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -120,7 +120,7 @@ a {
 
 .centerbox2 {
 	padding-left: 0px;
-	//padding-top: 4px;
+	///padding-top: 4px;
 	width: 900px;
 	margin: 0 auto;
 	background: rgba(0, 0, 0, 0.14);
@@ -238,6 +238,7 @@ th, td {
 
 .clicker:hover {cursor: pointer}
 
+
 .exit{
 	opacity: 0;
 	position:absolute;
@@ -272,4 +273,13 @@ path{
 	margin-right: auto;
 	left: 0;
 	right: 0;
+}
+
+#ball{
+	opacity: 0;
+	position: relative;
+	line-spacing: 0px;
+	height: 8px;
+	font-size: 0px;
+	display: -webkit-inline-box;
 }

@@ -21,16 +21,31 @@ const articles = [
 
 
 
-app.get('/', function (req, res) {
-    const options = {pretty: true}
-    res.send(pug.renderFile('src/index.pug', {articles}))
-})
+
 
 app.get('/iframe/:article', function (req, res) {
     res.send(pug.renderFile('src/iframe.pug', {articles, article: req.params.article}))
 })
 
 app.use("/", express.static(__dirname + '/'));
+
+
+app.get('/', function(req, res){
+    const options = {pretty: true}    
+    res.send(pug.renderFile('src/index.pug', {articles}))
+});
+
+app.get('/:content/:id', function (req, res) {
+    const options = {pretty: true}
+    const urlInfo = {content: req.params.content, id: req.params.id};
+    console.log({articles, urlInfo})
+    try{
+        res.send(pug.renderFile('src/index.pug', {articles, urlInfo}))
+    }catch(err){
+        console.log(err)
+    }
+})
+
 
 app.use(express.static('public'))
 app.use(express.static('files'))

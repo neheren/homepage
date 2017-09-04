@@ -1,15 +1,15 @@
 @font-face {
 	font-family: bebas;
-	src: url(fonts/BebasNeueBook.otf);
+	src: url(/fonts/BebasNeueBook.otf);
 }
 
 @font-face {
 	font-family: bebas-mid;
-	src: url(fonts/RobotoCondensed-Regular.ttf);
+	src: url(/fonts/RobotoCondensed-Regular.ttf);
 }
 @font-face {
 	font-family: rob;
-	src: url(fonts/Roboto-Regular.ttf);
+	src: url(/fonts/Roboto-Regular.ttf);
 }
 
 
@@ -19,7 +19,7 @@
 
 body {
     transition: .4s ease-out;
-   // background: black;
+    -webkit-transition: .4s ease-out;
 }
 
 .right-text{
