@@ -21,7 +21,7 @@ $(document).ready(function(){
             $("#iframe-content").append('<div id="loader" style="color:white">loading</div>')
             switchPage('/projects/'+ article, article);
             contentOpen = true;        
-        })
+        });
     })
 
     $(".exit").click(function(){
