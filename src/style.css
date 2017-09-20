@@ -23,7 +23,6 @@
 	src: url(/fonts/Roboto-Light.ttf);
 }
 
-
 @font-face {
 	font-family: rob-b;
 	src: url(/fonts/Roboto-Bold.ttf);
@@ -59,7 +58,7 @@ body{
 .video{
 	height: 100%;
 	width: 100%;
-	overflow:hidden;
+	overflow: hidden;
 	position: relative;
 	object-fit: cover;
 
@@ -292,3 +291,4 @@ path{
 	font-size: 0px;
 	display: -webkit-inline-box;
 }
+

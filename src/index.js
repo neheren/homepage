@@ -7,7 +7,6 @@ function article(id, title, video, image, text, desc, date){
     return {id, title, video, image, text, desc, date};
 }
 
-
 const articles = [
     article(0, 'Mix And Match', 'https://www.youtube.com/embed/O3w1uUlgplE', 'mixand', 'En Roskilde installation med formål at bringe folk sammen over "up and comming" musik. Videoen er animeret og produceret af mig. ', 'Lavet på Medialogy 3. semester', '13/8-2016'), 
     article(1, 'Noget andet', 'https://www.youtube.com/embed/6B-Zgmvg-zzctI', 'ep', 'I denne smag bruger vi sag.', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
@@ -19,13 +18,9 @@ const articles = [
     article(7, 'Svært projekt', 'https://www.youtube.com/embed/6B-zRNrCrA8', 'flyy', 'Tjek det ud', 'DET RIGTIGT -Sivas 2017', '13/8-2017'), 
 ];
 
-
-
-
-
 app.get('/iframe/:article', function (req, res) {
     res.send(pug.renderFile('src/iframe.pug', {articles, article: req.params.article}))
-})
+});
 
 app.use("/", express.static(__dirname + '/'));
 
@@ -38,7 +33,6 @@ app.get('/', function(req, res){
 app.get('/:content/:id', function (req, res) {
     const options = {pretty: true}
     const urlInfo = {content: req.params.content, id: req.params.id};
-    console.log({articles, urlInfo})
     try{
         res.send(pug.renderFile('src/index.pug', {articles, urlInfo}))
     }catch(err){
