@@ -106,6 +106,8 @@ $(document).ready(function(){
 			$("#ball").stop().animate({opacity:1, left:"70", top:"-70px", height:"8px"}, 1200, "easeOutExpo")
 			$("#slyt").stop().animate({width: "120px", top:"-50px" }, 1000, "easeOutExpo");
 
+			/*ADD CLASS TO WITH ANIMATION IMITING */
+
 		}else{
 			$(".frontpage-text").css({top: menuHeight+ "px"})
 			$("#slyt").stop().animate({width: "230px", top:"0px" }, 1000, "easeInOutExpo");
