@@ -98,8 +98,9 @@ $(document).ready(function(){
 
 	scrollLink("#projekterlink", "#projekter")
 	scrollLink("#erfaringlink", "#erfaring")
+	scrollLink("#tidslinjelink", "#tidslinje")
 	scrollLink("#musiklink", "#musik")
-
+	
 	$(window).scroll(function(){
 		if(window.scrollY > menuHeight){
 			$(".frontpage-text").css({top: window.scrollY})

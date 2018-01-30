@@ -312,6 +312,20 @@ path{
 
 
 
+.nullify{
+	text-decoration: line-through;
+	color:#ACACAC;
+
+}
+
+.smallQuote{
+	font-size: 10px;
+}
+
+
+
+.st0{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+
 
 @media only screen and (max-width: 1000px) {
 	.slyt{

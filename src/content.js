@@ -27,9 +27,9 @@ $(document).ready(function(){
     $(".exit").click(function(){
         switchPage('/', 'home');
         $(".exit").animate({opacity:0}, 1000, "easeOutExpo")
+        contentOpen = false;
         $(".portfolio-content").animate({height:0 +"px", opacity:0}, 1000, "easeOutExpo", function() {
             $("#iframe-content").remove()
-            contentOpen = false;
         })
     })
 
@@ -102,7 +102,7 @@ window.onpopstate = function(event) {
     console.log(event.state);
 };
 
-function scrollNow(scrollToObj){
+function scrollNow(scrollToObj) {
 	hideMenu()
 	$('html, body').animate({
 		scrollTop: $(scrollToObj).position().top
