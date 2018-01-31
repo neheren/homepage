@@ -139,9 +139,9 @@ a {
 	padding-top: 4px;
 	width: 900px;
 	margin: 0 auto;
-	top: 100px;
-	//background: rgba(0, 0, 0, 0.14);
+	//top: 100px;
 	z-index: 50;
+	position: relative;
 }
 
 .centerbox2 {
@@ -322,7 +322,48 @@ path{
 	font-size: 10px;
 }
 
+.timeline{
+	position: absolute;
+}	
+.timeline-svg{
+	position: absolute;
+	left: 88px;
+	width: 13px;
+	margin-top:6px;
+}
 
+.timeline-text{
+	position: absolute;
+	color: white;
+	width: 500px;
+}
+
+.timeline-text-date{
+	font-size: 25px;
+	margin-top:0px;
+	margin-left:10px;
+	margin-bottom:27px;
+	font-family: bebas;
+	opacity: 0;
+	transition: opacity .5s;
+	
+}
+
+.timeline-text-el{
+	margin:0px;
+	margin-left:100px;
+	font-family: bebas-bold;
+	font-size: 25px;
+}
+
+
+.timeline-text-desc{
+	position: absolute;
+	margin-left:170px;
+	margin-top:0px;
+	font-family: rob;
+	font-size: 10px;
+}
 
 .st0{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
 
